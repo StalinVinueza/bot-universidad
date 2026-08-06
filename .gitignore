@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+
+# Environment
+.env
+
+# Database
+*.db
+
+# Logs
+logs/*.log
+
+# Playwright
+.playwright/
