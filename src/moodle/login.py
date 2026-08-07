@@ -1,4 +1,5 @@
 from playwright.sync_api import sync_playwright, TimeoutError
+from .courses import Courses
 
 from src.config.settings import (
     MOODLE_URL,
@@ -57,6 +58,10 @@ class MoodleClient:
 
         except TimeoutError:
             pass
+
+        courses = Courses(moodle.page)
+
+        courses.get_courses()
 
     def is_logged(self):
         self.page.wait_for_load_state("networkidle")
